@@ -41,5 +41,9 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Megaport/Desktop/java/eclipse-jee-oxygen-3a-win32-x86_64/lib/antlr-3.5.2-complete.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Megaport/Desktop/java/eclipse-jee-oxygen-3a-win32-x86_64/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Megaport/Desktop/java/eclipse-jee-oxygen-3a-win32-x86_64/lib/hibernate-commons-annotations-4.0.3.final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Megaport/Desktop/java/eclipse-jee-oxygen-3a-win32-x86_64/lib/hibernate-core-4.3.8.Final.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
