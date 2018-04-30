@@ -3,6 +3,8 @@ package entities;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 /**
@@ -13,6 +15,26 @@ import java.util.Date;
 @Table(name="exam")
 @NamedQuery(name="Exam.findAll", query="SELECT e FROM Exam e")
 public class Exam implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "idexam")
+    private Integer idexam;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 45)
+    @Column(name = "nameexam")
+    private String nameexam;
+    @Column(name = "idprofessor")
+    private Integer idprofessor;
+    @Column(name = "Date")
+    @Temporal(TemporalType.DATE)
+    private Date date;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "mark")
+    private int mark;
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -100,5 +122,80 @@ public class Exam implements Serializable {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
+
+    public Exam(Integer idexam) {
+        this.idexam = idexam;
+    }
+
+    public Exam(Integer idexam, String nameexam, int mark) {
+        this.idexam = idexam;
+        this.nameexam = nameexam;
+        this.mark = mark;
+    }
+
+    public Integer getIdexam() {
+        return idexam;
+    }
+
+    public void setIdexam(Integer idexam) {
+        this.idexam = idexam;
+    }
+
+    public String getNameexam() {
+        return nameexam;
+    }
+
+    public void setNameexam(String nameexam) {
+        this.nameexam = nameexam;
+    }
+
+    public Integer getIdprofessor() {
+        return idprofessor;
+    }
+
+    public void setIdprofessor(Integer idprofessor) {
+        this.idprofessor = idprofessor;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public int getMark() {
+        return mark;
+    }
+
+    public void setMark(int mark) {
+        this.mark = mark;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idexam != null ? idexam.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Exam)) {
+            return false;
+        }
+        Exam other = (Exam) object;
+        if ((this.idexam == null && other.idexam != null) || (this.idexam != null && !this.idexam.equals(other.idexam))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "entities.Exam[ idexam=" + idexam + " ]";
+    }
 
 }

@@ -9,5 +9,10 @@
 		<managed-bean-class>StudentBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>examBean</managed-bean-name>
+		<managed-bean-class>ExamBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>
